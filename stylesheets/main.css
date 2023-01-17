@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+* {
+  line-height: 140%;
+}
+html {
+  font-size: 62.5%;
+}
+/* 
+  This styles the body of the web page to have a background color of #f5f5ff,
+  I chose blue because it represent trust and it has a good relation with the topic.
+  I've chose the light scheme because I've put a lot of text and information on the website and 
+  my background color is close to white.
+  it is the monochromatic color scheme.
+  used bolded version to show important texts
+
+*/
+body {
+  font-family: "Lora", serif;
+  font-size: 1.6rem;
+  background-color: #f5f5ff;
+  color: #191970;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.nav-link {
+  margin: 4px;
+  border: 2px solid black;
+  padding: 5px;
+
+  background-color: #101052;
+  color: #15153a;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #f5f5ff;
+  color: #191970;
+}
+
+/*
+  This styles all h1 tags to be center aligned and have a font size of 40 px.
+*/
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
