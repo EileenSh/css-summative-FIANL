@@ -19,6 +19,9 @@
       href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
       rel="stylesheet" />
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       /*
         This styles the section elements on this page to
         have space that is 10% of the browser window added
@@ -83,14 +86,14 @@
         font-size: 62.5%;
       }
       /* 
-  This styles the body of the web page to have a background color of #f5f5ff,
-  I chose blue because it represent trust and it has a good relation with the topic.
-  I've chose the light scheme because I've put a lot of text and information on the website and 
-  my background color is close to white.
-  it is the monochromatic color scheme.
-  used bolded version to show important texts
+        This styles the body of the web page to have a background color of #f5f5ff,
+        I chose blue because it represent trust and it has a good relation with the topic.
+        I've chose the light scheme because I've put a lot of text and information on the website and 
+        my background color is close to white.
+        it is the monochromatic color scheme.
+        used bolded version to show important texts
 
-*/
+      */
       body {
         font-family: "Lora", serif;
         font-size: 1.6rem;
@@ -114,8 +117,8 @@
       }
 
       /*
-  This styles all h1 tags to be center aligned and have a font size of 40 px.
-*/
+        This styles all h1 tags to be center aligned and have a font size of 40 px.
+      */
       h1 {
         text-align: center;
         font-size: 4rem;
@@ -124,6 +127,83 @@
 
       h2 {
         font-size: 2.5rem;
+      }
+
+      /* Beginning of code sourced from https://www.sitepoint.com/css-transforms-real-world/ */
+      .flip-card {
+        position: relative;
+        width: 22vw;
+        height: 20vw;
+        min-width: 130px;
+        min-height: 100px;
+        margin: 0 20px;
+        transform-style: preserve-3d;
+        transition: transform 1s ease-in-out;
+      }
+
+      .flip-card:hover {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card img {
+        object-fit: cover;
+      }
+
+      .side {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+      }
+
+      .back {
+        transform: rotateY(180deg);
+        text-align: center;
+        background-color: #e0e0e0;
+      }
+
+      #back-to-top {
+        display: -ms-flexbox;
+        display: -moz-box;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+
+        width: 80px;
+        height: 80px;
+
+        -ms-flex-pack: center;
+        -moz-box-pack: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+
+        -ms-flex-align: center;
+        -moz-box-align: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+
+        border: #121212 solid 2px;
+
+        -moz-border-radius: 40px;
+        -webkit-border-radius: 40px;
+        border-radius: 40px;
+
+        background: -o-radial-gradient(#bdb0f7, #4c6594);
+        background: -moz-radial-gradient(#bdb0f7, #4c6594);
+        background: -webkit-radial-gradient(#bdb0f7, #4c6594);
+        background: radial-gradient(#bdb0f7, #4c6594);
+
+        color: #313131;
+
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
       }
     </style>
   </head>
@@ -134,7 +214,9 @@
         <ul>
           <li><a href="index.html">Home Page</a></li>
           <li>
-            <a href="nation and communities.html">nation and communities</a>
+            <a href="background and geograpgic location.html"
+              >background and geograpgic location</a
+            >
           </li>
         </ul>
       </nav>
@@ -163,16 +245,19 @@
             </a>
           </p>
         </div>
-        <figure>
-          <figcaption>
-            The image below is the symbol of The Brokenhead (ojibway)
-            <br />
-          </figcaption>
+        <p>The image below is the symbol of The Brokenhead (ojibway)</p>
+        <figure class="flip-card">
           <img
             src="image/Brokenhead.png"
             alt="An image of symbol of The Brokenhead."
+            class="front side"
             width="500px"
             height="500px" />
+          <figcaption class="back side">
+            The graceful bird of the skies, the eagle, is the prayer carrier and
+            messenger of the Anishinabe people. As the eagle soars across the
+            skies, one knows he is carrying the prayers to the Creator.
+          </figcaption>
         </figure>
       </section>
       <section>
@@ -204,17 +289,21 @@
         <!--
           image content
         -->
-        <figure>
-          <figcaption>
-            The image below is the symbol of The Fort Alexander / Sagkeeng
-            (Anicinabe)
-            <br />
-          </figcaption>
+        <p>
+          The image below is the symbol of The Fort Alexander / Sagkeeng
+          (Anicinabe)
+        </p>
+        <figure class="flip-card">
           <img
             src="image/Sagkeeng.png"
             alt="An image of symbol of The Sagkeeng."
+            class="front side"
             width="480px"
             height="450px" />
+          <figcaption class="back side">
+            The image below is the symbol of The Fort Alexander / Sagkeeng
+            (Anicinabe)
+          </figcaption>
         </figure>
       </section>
       <section>
@@ -350,6 +439,12 @@
             width="500px"
             height="480px" />
         </figure>
+      </section>
+      <section>
+        <a href="#top" id="back-to-top">
+          Back <br />
+          to Top
+        </a>
       </section>
     </main>
     <footer>
